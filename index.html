@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KHALIL TICH | Royal Profit Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00f2ff;
+            --secondary: #7000ff;
+            --gold: #ffcc00;
+            --glass: rgba(255, 255, 255, 0.04);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #02020a;
+            overflow: hidden;
+            perspective: 1200px;
+        }
+
+        /* أنوار الخلفية */
+        .aurora {
+            position: absolute;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle at 20% 30%, var(--secondary) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, var(--primary) 0%, transparent 40%);
+            filter: blur(100px);
+            animation: rotateBG 25s linear infinite;
+            opacity: 0.35;
+            z-index: 1;
+        }
+
+        @keyframes rotateBG {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* البطاقة الشفافة */
+        .glass-card {
+            position: relative;
+            width: 380px;
+            background: var(--glass);
+            backdrop-filter: blur(35px) saturate(200%);
+            -webkit-backdrop-filter: blur(35px) saturate(200%);
+            border: 1px solid var(--border);
+            border-radius: 55px;
+            padding: 40px 25px;
+            text-align: center;
+            z-index: 10;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+            transition: 0.3s ease-out;
+        }
+
+        /* التاج الملكي الحقيقي */
+        .crown-box {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.6));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .crown-box svg { width: 90px; height: auto; fill: url(#goldGrad); }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-3deg); }
+            50% { transform: translateY(-15px) rotate(3deg); }
+        }
+
+        h1 { color: #fff; font-size: 2.2rem; font-weight: 900; margin-bottom: 5px; }
+        
+        .badge {
+            background: rgba(0, 242, 255, 0.1);
+            color: var(--primary);
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+        .btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            padding: 18px 10px;
+            border-radius: 22px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-8px);
+            border-color: var(--primary);
+        }
+
+        .btn i { font-size: 1.5rem; }
+
+        .footer { margin-top: 35px; color: rgba(255,255,255,0.2); font-size: 0.6rem; }
+
+        /* منطقة الإعلانات (مخفية برمجياً حتى تضع كودك) */
+        .ad-space { margin-top: 20px; border-radius: 10px; overflow: hidden; }
+    </style>
+</head>
+<body>
+
+    <div class="aurora"></div>
+
+    <div class="glass-card" id="card">
+        <div class="crown-box">
+            <svg viewBox="0 0 100 100">
+                <defs>
+                    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#fff176;" />
+                        <stop offset="50%" style="stop-color:#ffcc00;" />
+                        <stop offset="100%" style="stop-color:#e65100;" />
+                    </linearGradient>
+                </defs>
+                <path d="M10,80 L90,80 L100,30 L75,50 L50,20 L25,50 L0,30 Z" />
+                <circle cx="50" cy="15" r="5" />
+            </svg>
+        </div>
+
+        <h1>KHALIL TICH 🇩🇿</h1>
+        <div class="badge">ULTRA PROFIT SYSTEM</div>
+
+        <div class="links-grid">
+            <a href="https://www.mediafire.com/file/7rav7lei1b2g6a1/Free+Fire+1.118.1+v7a+sp.xapk/file" target="_blank" class="btn" style="grid-column: span 2; flex-direction: row; background: rgba(0,242,255,0.05);">
+                <i class="fas fa-fire" style="color: #ff4500;"></i>
+                <span>تنزيل Free Fire APK</span>
+            </a>
+
+            <a href="https://t.me/free7styel" target="_blank" class="btn">
+                <i class="fab fa-telegram-plane" style="color: #0088cc;"></i>
+                <span>Telegram</span>
+            </a>
+
+            <a href="https://instagram.com/free7styel" target="_blank" class="btn">
+                <i class="fab fa-instagram" style="color: #ff007f;"></i>
+                <span>Instagram</span>
+            </a>
+
+            <div class="btn" style="cursor: pointer;" onclick="shareSite()">
+                <i class="fas fa-share-nodes" style="color: #fbc02d;"></i>
+                <span>مشاركة الموقع</span>
+            </div>
+
+            <a href="#" class="btn">
+                <i class="fas fa-wallet" style="color: #64ffda;"></i>
+                <span>اربح معنا</span>
+            </a>
+        </div>
+
+        <div class="ad-space">
+            </div>
+
+        <p class="footer">MONETIZED BY KHALIL TICH • 2025</p>
+    </div>
+
+    <script>
+        // تأثير الحركة ثلاثية الأبعاد
+        const card = document.getElementById('card');
+        document.addEventListener('mousemove', (e) => {
+            let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        function shareSite() {
+            if (navigator.share) {
+                navigator.share({ title: 'KHALIL TICH', url: window.location.href });
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('تم نسخ الرابط! انشره لتربح من الزيارات.');
+            }
+        }
+    </script>
+
+    <script type='text/javascript' src='//your-ad-network-link.js'></script>
+
+</body>
+</html>
